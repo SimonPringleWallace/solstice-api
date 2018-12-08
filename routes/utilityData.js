@@ -5,7 +5,11 @@ let utiliData = require('../public/utilData (1).json')
 
 /* GET utiliData. */
 router.get('/', function(req, res, next) {
-  console.log('hey!')
+  if (res.statusCode === 200){
+    res.send(utiliData)
+  }else {
+    res.send('error')
+  }
 });
 
 module.exports = router;
